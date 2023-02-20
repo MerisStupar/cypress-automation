@@ -1,0 +1,21 @@
+{
+  "name": "cypress-automation",
+  "version": "1.0.0",
+  "description": "Cypress Automation - TS -JS",
+  "main": "index.js",
+  "scripts": {
+    "runner": "cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "javascript",
+    "typescript",
+    "testing"
+  ],
+  "author": "Meris",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.6.0",
+    "typescript": "^4.9.5"
+  }
+}
