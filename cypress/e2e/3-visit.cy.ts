@@ -18,4 +18,8 @@ describe('template spec', () => {
         });
     });
 
+    it('Input Challange', ()=>{
+        cy.get('input#newButtonName')
+    });
+
   });
