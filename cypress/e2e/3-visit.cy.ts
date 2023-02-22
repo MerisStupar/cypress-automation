@@ -18,8 +18,11 @@ describe('template spec', () => {
         });
     });
 
-    it('Input Challange', ()=>{
-        cy.get('input#newButtonName')
+    it('Input Challange - assertion', ()=>{
+        cy.get('input#newButtonName').type('Hello from input');
+        cy.get('button#updatingButton').click()
+        .should('have.text', 'Hello from input');
     });
+
 
   });
