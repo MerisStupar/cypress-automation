@@ -4,8 +4,8 @@
   "description": "Cypress Automation - TS -JS",
   "main": "index.js",
   "scripts": {
-    "runner": "cypress open --e2e --browser chrome",
-    "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com"
+    "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Package_File",
+    "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File"
   },
   "keywords": [
     "cypress",
