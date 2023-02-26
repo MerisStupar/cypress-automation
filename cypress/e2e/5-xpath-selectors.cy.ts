@@ -20,7 +20,7 @@ describe("Locators", ()=>{
         .should('have.css', 'background-color', 'rgb(255, 193, 7)')
     });
 
-    it.only('Find button then click to show ALERT MESSAGE - example', ()=>{
+    it('Find button then click to show ALERT MESSAGE - example', ()=>{
         cy.xpath(`//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary')]`)
         .should('have.css', 'background-color', 'rgb(0, 123, 255)')
         .contains("Button")
