@@ -9,7 +9,7 @@ export default defineConfig({
     env: {
       demoVar: "Hello from the Cypress.Config.Ts",
       demoQA: "https://demoqa.com",
-      theInternetHeroku: "https://the-internet.herokuapp.com/",
+      theInternetHeroku: "https://the-internet.herokuapp.com",
       //https://www.globalsqa.com/angularjs-protractor-practice-site/
       angular: "https://www.globalsqa.com"
 

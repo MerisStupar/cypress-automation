@@ -1,4 +1,4 @@
-describe.only('Demo QA', () => {
+describe.skip('Demo QA', () => {
     
     beforeEach(()=>{
         cy.visit(`${Cypress.env("demoQA")}/checkbox`, {timeout: 45000});
@@ -13,6 +13,13 @@ describe.only('Demo QA', () => {
 
 describe('Demo QA', () => {
     
+    beforeEach(()=>{
+        cy.visit(`${Cypress.env("theInternetHeroku")}/checkboxes`);
+    });
+
+    it('Checkbox scenario', () => {
+        cy.get(`form#checkboxes input`).eq(0).click().should('be.checked');
+    });
 
 
 });
