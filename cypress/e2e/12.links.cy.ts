@@ -26,7 +26,7 @@ describe('Intercepting API(SPYING) request after clicking on the button', () => 
     });
 
 
-    it('Intercepting CREATED link  - CREATED', () => {
+    it.only('Intercepting CREATED link  - CREATED', () => {
 
         cy.intercept('GET', `${Cypress.env("demoQA")}/created`).as('linkStatus')
 
@@ -45,6 +45,24 @@ describe('Intercepting API(SPYING) request after clicking on the button', () => 
         
         cy.get("#no-content").click()
         cy.get("#linkResponse").should('have.text', "Link has responded with staus 204 and status text No Content");
+
+        cy.wait('@no-content').then((request)=>{
+            cy.log('This is the intercepted request', request);
+       
+        });
+    });
+
+    it('Intercepting MOVED link - MOVED', () => {
+        
+        cy.intercept('GET', `${Cypress.env("demoQA")}/moved`).as("moved");
+
+        cy.get('#moved').click();
+        cy.get('#linkResponse').should('have.text', "Link has responded with staus 301 and status text Moved Permanently");
+
+        cy.wait('@moved').then((request)=>{
+            cy.log('This is the intercepted request', request);
+       
+        });
     });
 
 });
