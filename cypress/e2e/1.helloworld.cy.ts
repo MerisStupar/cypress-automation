@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Hello-World', () => {
   it('passes', () => {
     cy.log('Hello world');
   });

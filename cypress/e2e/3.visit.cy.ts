@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Visit Demo', () => {
 
     beforeEach(()=>{
         cy.visit('/textinput');

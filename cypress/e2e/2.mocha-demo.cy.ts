@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Mocha-Demo', () => {
 
   before(()=>{
     cy.log('Hello from the before hook');
@@ -24,7 +24,7 @@ describe('template spec', () => {
     cy.log('Hello world');
   });
 
-  it.only('Testcase #3', () => {
+  it('Testcase #3', () => {
     cy.log('Hello world');
   });
 

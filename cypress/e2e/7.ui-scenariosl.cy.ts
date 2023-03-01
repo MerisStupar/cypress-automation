@@ -1,4 +1,4 @@
-describe.skip('Click Challange', () => {
+describe('Click Challange', () => {
    
     beforeEach(()=>{
         cy.visit('/click');
@@ -16,7 +16,7 @@ describe.skip('Click Challange', () => {
 });
 
 //Implemented from this link https://github.com/dmtrKovalenko/cypress-real-events
-describe.skip('Hover challange', () => {
+describe('Hover challange', () => {
    
     beforeEach(()=>{
         cy.visit('/mouseover');
@@ -57,7 +57,7 @@ describe('Dynamic table challange', () => {
     });
 
 
-    it.only('Chrome CPU Test - Dynamic table Example  - FOR LOOP', () => {
+    it('Chrome CPU Test - Dynamic table Example  - FOR LOOP', () => {
         cy.get(`div[role="row"] span`).each(($cell) =>{
         
             if($cell.text().includes('Chrome')){
