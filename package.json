@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "allTest": "cypress run --e2e --browser chrome",
-    "test": "cypress run"
-    "test2": "cypress run"
     "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Package_File",
     "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File"
   },

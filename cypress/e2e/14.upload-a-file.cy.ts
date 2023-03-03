@@ -6,7 +6,7 @@ describe('Upload a file in the QA Demo site', () => {
 
 
     it('Upload the file', () => {
-        
+        cy.get()
     });
 
 });
