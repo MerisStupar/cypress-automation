@@ -66,7 +66,7 @@ describe('Broken images in the list - .first()', () => {
         });
     });
 
-    it('Valid Image Detected & Broken image - with counter ', () => {
+    it.only('Valid Image Detected & Broken image - with counter ', () => {
 
         let brokenImages=0; // Initialize counter for broken images
 
@@ -76,6 +76,7 @@ describe('Broken images in the list - .first()', () => {
 
             if(image.naturalHeight > 0){
                cy.log(`I've found the valid image in the list`, image);
+               cy.debug()
             }
             else if(image.naturalHeight === 0){
             cy.log(`Found the broken image in the list`, image);

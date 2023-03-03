@@ -46,12 +46,12 @@ describe('Dynamic table challange', () => {
                 chromeRowValues.push($cell.next().next().next().next().text());
                 cy.log("Chrome row values", chromeRowValues);
 
-/*                 chromeRowValues.forEach((value)=>{
+                chromeRowValues.forEach((value)=>{
                     if(value.includes('%')){
                         cy.log(value);
                         cy.get(`p[class="bg-warning"]`).should('have.text', `Chrome CPU: ${value}`);
                     }
-                }) */
+                })
             }
         });
     });
@@ -66,7 +66,7 @@ describe('Dynamic table challange', () => {
                 const chromeRowValues: string [] = [];
 
                 for(let i=0; i<=4; i++){
-                    const cellValue = $cell.nextAll().eq(i).text();  //.nextAll() - added to go to the limit of the for loop
+                    const cellValue = $cell.nextAll().eq(i).text(); 
                     if(cellValue){
                         chromeRowValues.push(cellValue);
                     } else{
