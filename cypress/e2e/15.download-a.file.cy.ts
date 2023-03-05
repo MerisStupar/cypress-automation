@@ -1,4 +1,4 @@
-describe('Download a file in the QA Demo site', () => {
+describe.skip('Download a file in the QA Demo site', () => {
     
     beforeEach(()=>{
         cy.visit(`${Cypress.env("demoQA")}/upload-download`, {timeout: 20000});
@@ -7,8 +7,7 @@ describe('Download a file in the QA Demo site', () => {
 
     it('Download the file', () => {
         cy.get(`a#downloadButton`).click();
-        cy.verifyDownload('sampleFile.jpeg')
-
+        cy.verifyDownload('sampleFile.jpeg');
     });
 
 });

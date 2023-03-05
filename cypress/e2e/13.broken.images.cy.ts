@@ -76,7 +76,6 @@ describe('Broken images in the list - .first()', () => {
 
             if(image.naturalHeight > 0){
                cy.log(`I've found the valid image in the list`, image);
-               cy.debug()
             }
             else if(image.naturalHeight === 0){
             cy.log(`Found the broken image in the list`, image);
