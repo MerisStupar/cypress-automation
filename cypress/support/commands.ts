@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 ///<reference types="@cypress/xpath" />
 import 'cypress-file-upload'
+require("cy-verify-downloads").addCustomCommand();
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
