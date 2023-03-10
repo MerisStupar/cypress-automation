@@ -2,7 +2,9 @@
 ///<reference types="@cypress/xpath" />
 import 'cypress-file-upload';
 import '@testing-library/cypress/add-commands';
+import '@4tw/cypress-drag-drop'
 require("cy-verify-downloads").addCustomCommand();
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
