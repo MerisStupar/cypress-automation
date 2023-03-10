@@ -39,11 +39,5 @@ describe('IFrame example', () => {
             cy.get(`.tox-toolbar__group:nth-of-type(3) span.tox-tbtn__icon-wrap:first-of-type`).eq(0)
             .click()
             cy.wrap($body).find('p').type("{esc}")
-
-
-        });
-
-      
-       
     });
 });
