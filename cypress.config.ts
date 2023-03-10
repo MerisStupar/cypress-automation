@@ -6,6 +6,7 @@ export default defineConfig({
   e2e: {
     baseUrl: "http://uitestingplayground.com",
     setupNodeEvents(on, config) {
+      hideXhr: true;
     //Verify download import
     on('task', verifyDownloadTasks);
     //----------------------------
@@ -17,7 +18,7 @@ export default defineConfig({
       theInternetHeroku: "https://the-internet.herokuapp.com",
       //https://www.globalsqa.com/angularjs-protractor-practice-site/
       angular: "https://www.globalsqa.com"
-
+      
 
     }
   },

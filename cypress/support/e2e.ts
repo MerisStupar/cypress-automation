@@ -18,7 +18,7 @@ require('@cypress/xpath/src');
 import './commands';
 import './exceptions';
 import "cypress-real-events/support";
-
+import 'cypress-plugin-xhr-toggle';
 
 
 // Alternatively you can use CommonJS syntax:
