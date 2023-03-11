@@ -6,11 +6,9 @@ export default defineConfig({
   e2e: {
     baseUrl: "http://uitestingplayground.com",
     setupNodeEvents(on, config) {
-      hideXhr: true;
     //Verify download import
     on('task', verifyDownloadTasks);
     //----------------------------
-    
     },
     env: {
       demoVar: "Hello from the Cypress.Config.Ts",
@@ -18,9 +16,8 @@ export default defineConfig({
       theInternetHeroku: "https://the-internet.herokuapp.com",
       //https://www.globalsqa.com/angularjs-protractor-practice-site/
       angular: "https://www.globalsqa.com"
-      
+    },
 
-    }
   },
   pageLoadTimeout: 3000,
   viewportHeight: 1000,
