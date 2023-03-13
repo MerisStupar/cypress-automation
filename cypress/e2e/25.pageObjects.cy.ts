@@ -13,7 +13,7 @@ describe('Basics', () => {
         LoginPage.loginElement.click();
         cy.url().should('contain', 'profile');
         LoginPage.userNameIDElement.should('have.text', "test");
-        ProfilePage.headerElement.should('have.text', "Profile")
+        ProfilePage.headerElement.should('have.text', "Profile");
     });
 
 
@@ -26,8 +26,7 @@ describe('Basics', () => {
 
     it('Wrong User Login Scenario', () => {
         LoginPage.submitLogin('test', 'WrongPassword');
-        cy.url().should('not.contain', 'profile');
-        cy.wait(2000);
+        cy.url({timeout: 20000}).should('not.contain', 'profile');
         LoginPage.invalidLoginMessageElement.should(
           "have.text",
           "Invalid username or password!"
