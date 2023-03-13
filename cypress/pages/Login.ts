@@ -35,8 +35,4 @@ class Login extends Main{
 
 }
 
-
-
-
-
 export const LoginPage = new Login();
