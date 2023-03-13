@@ -1,4 +1,6 @@
-class Login{
+import { Main } from "../../cypress/pages/Main";
+
+class Login extends Main{
 
     private username:string = '#userName';
     private password:string = '#password';

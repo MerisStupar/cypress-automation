@@ -1,4 +1,5 @@
-import {LoginPage} from '../../cypress/pages/Login'
+import {LoginPage} from '../../cypress/pages/Login';
+import { ProfilePage } from '../pages/Profile';
 
 describe('Basics', () => {
     
@@ -11,7 +12,8 @@ describe('Basics', () => {
         LoginPage.passwordElement.type('Test1234*');
         LoginPage.loginElement.click();
         cy.url().should('contain', 'profile');
-        cy.get(`.main-header`).should('have.text', "Profile")
+        LoginPage.userNameIDElement.should('have.text', "test");
+        ProfilePage.headerElement.should('have.text', "Profile")
     });
 
 
@@ -30,7 +32,7 @@ describe('Basics', () => {
           "have.text",
           "Invalid username or password!"
         );
-        cy.get(`div[class=main-header]`).should('have.text', "Login");
+       LoginPage.headerElement.should('have.text', "Login");
     });
 
 
