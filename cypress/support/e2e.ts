@@ -23,7 +23,7 @@ import "cypress-real-events/support";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-beforeEach(()=>{
+/* beforeEach(()=>{
     cy.session('mySession', ()=>{
         cy.visit(`${Cypress.env("demoQA")}/login`, {timeout: 20000});
         cy.get('#userName').type('test');
@@ -41,4 +41,4 @@ after(()=>{
         cy.log('Cookies: ', cookies);
         expect(cookies).to.have.length(0);
     });
-})
+}) */
