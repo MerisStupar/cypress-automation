@@ -24,10 +24,21 @@ import "cypress-real-events/support";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 beforeEach(()=>{
-    cy.log('Hello I am a GLOBAL Before Each HOOK');
+    cy.session('mySession', ()=>{
+        cy.visit(`${Cypress.env("demoQA")}/login`, {timeout: 20000});
+        cy.get('#userName').type('test');
+        cy.get('#password').type('Test1234*');
+        cy.get('#login').click();
+        cy.url().should('contain', 'profile');
+    });
 });
 
 
 after(()=>{
     cy.log('Hello I am a GLOBAL After HOOK');
+    cy.clearCookies();
+    cy.getCookies().then((cookies)=>{
+        cy.log('Cookies: ', cookies);
+        expect(cookies).to.have.length(0);
+    });
 })
