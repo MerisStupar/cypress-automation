@@ -3,7 +3,8 @@ import {User} from './model'
 describe('Array of Objects - Users', () => {
     
     it('Getting user information based on my fixture', () => {
-        cy.fixture<{users: User[]}>('example.json').its('users')
+        cy.fixture<{users: User[]}>('example.json')
+        .its('users')
         .then((users)=>{
 
             users.forEach(user=>{
