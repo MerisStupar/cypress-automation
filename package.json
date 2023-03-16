@@ -7,7 +7,9 @@
     "electron": "cypress run --spec  cypress/e2e/25.pageObjects.cy.ts",
     "allTest": "cypress run --e2e --browser chrome",
     "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Package_File",
-    "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File"
+    "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File",
+
+    "cypress-run": "cypress run --browser firefox --headed --spec cypress/e2e/30.sharing-an-array-objects.cy.ts"
   },
   "keywords": [
     "cypress",

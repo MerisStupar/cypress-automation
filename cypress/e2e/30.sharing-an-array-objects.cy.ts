@@ -14,6 +14,7 @@ describe('Array of Objects - Users', () => {
 
                 if(user.valid == true){
                     cy.url().should('contain', 'profile');
+                    cy.wait(3000)
                 }else{
                     cy.url().should('contain', 'login');
                 }
