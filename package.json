@@ -8,7 +8,6 @@
     "allTest": "cypress run --e2e --browser chrome",
     "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Package_File",
     "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File",
-
     "cypress-run": "cypress run --browser firefox --headed --spec cypress/e2e/30.sharing-an-array-objects.cy.ts"
   },
   "keywords": [
@@ -25,6 +24,7 @@
     "cy-verify-downloads": "^0.1.13",
     "cypress": "^12.8.0",
     "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.3.0",
     "cypress-real-events": "^1.7.6",
     "typescript": "^4.9.5"
   },

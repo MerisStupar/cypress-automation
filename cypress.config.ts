@@ -9,6 +9,9 @@ export default defineConfig({
     //Verify download import
     on('task', verifyDownloadTasks);
     //----------------------------
+    //For the mochaawsome reporter
+    require('cypress-mochawesome-reporter/plugin')(on);
+    //--------------------------------------------
     },
     env: {
       demoVar: "Hello from the Cypress.Config.Ts",
@@ -21,5 +24,14 @@ export default defineConfig({
   },
   pageLoadTimeout: 3000,
   viewportHeight: 1000,
-  viewportWidth: 1400
+  viewportWidth: 1400,
+  //Mochaawsome Reporter
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'Reporter of failed tests',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
 });
