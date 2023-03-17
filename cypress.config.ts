@@ -34,4 +34,13 @@ export default defineConfig({
     inlineAssets: true,
     saveAllAttempts: false,
   },
+
+
+  //-Global for retries for tests
+  retries:{
+    runMode: 2,
+    openMode: 1,
+  },
+  video: false,
+  
 });
