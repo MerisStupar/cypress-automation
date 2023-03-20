@@ -82,11 +82,11 @@ export default defineConfig({
 
 
   //-Global for retries for tests
-  retries:{
+/*   retries:{
     runMode: 2,
     openMode: 1,
   },
-  video: false,
+  video: false, */
   
 });
 
