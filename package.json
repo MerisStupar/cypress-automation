@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress-plugin-xhr-toggle": "^1.0.0"
+    "cypress-plugin-xhr-toggle": "^1.0.0",
+    "mysql": "github:mysqljs/mysql"
   }
 }

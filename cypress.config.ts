@@ -7,6 +7,9 @@ const xlsx = require("node-xlsx").default;
 const fs = require("fs"); //For file
 const path = require("path"); //for file path
 
+//MySQL requirements
+const mysql = require("mysql");
+
 
 export default defineConfig({
   e2e: {
@@ -29,7 +32,16 @@ export default defineConfig({
         });
       },
     });
-    //------------------
+    //---------------------------------
+
+
+    //MySQL Implementation & Faker
+    on("task", {
+      queryDb: (query) => {
+        return queryTestDb(query, config);
+      },
+    });
+    //----------------------------
 
 
     //For the mochaawsome reporter
@@ -41,7 +53,17 @@ export default defineConfig({
       demoQA: "https://demoqa.com",
       theInternetHeroku: "https://the-internet.herokuapp.com",
       //https://www.globalsqa.com/angularjs-protractor-practice-site/
-      angular: "https://www.globalsqa.com"
+      angular: "https://www.globalsqa.com",
+
+      //Database 
+      db:{
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "cypress_test"
+      },
+      
+
     },
 
   },
@@ -67,3 +89,22 @@ export default defineConfig({
   video: false,
   
 });
+
+
+function queryTestDb(query, config) {
+  // creates a new mysql connection using credentials from cypress.json env's
+  const connection = mysql.createConnection(config.env.db);
+  // start connection to db
+  connection.connect();
+  // exec query + disconnect to db as a Promise
+  return new Promise((resolve, reject) => {
+    connection.query(query, (error, results) => {
+      if (error) reject(error);
+      else {
+        connection.end();
+        // console.log(results)
+        return resolve(results);
+      }
+    });
+  });
+}
