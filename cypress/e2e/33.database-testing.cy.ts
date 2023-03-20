@@ -1,7 +1,11 @@
-import { result } from "cypress/types/lodash";
 
 describe('MySQL Database testing', () => {
-    
+  
+    before(()=>{
+    cy.task("queryDb", `DROP TABLE movies`);
+    });
+
+  
     it("Create a movie table", function () {
         cy.task(
           "queryDb",
@@ -19,12 +23,12 @@ describe('MySQL Database testing', () => {
         ).then((result: any) => {
           expect(result.affectedRows).to.equal(2);
           expect(result.message).to.be.equal(
-            "&Records: 2  Dupliscates: 0  Warnings: 0"
+            "&Records: 2  Duplicates: 0  Warnings: 0"
           );
         });
       });
 
-      it.only('Select all movies', () => {
+      it('Select all movies', () => {
         
         cy.task('queryDb', `SELECT * FROM movies; `).then((result: any)=>{
           cy.log("First row validation: ").then(()=>{
@@ -40,9 +44,22 @@ describe('MySQL Database testing', () => {
             expect(result[1].release_year).to.be.eql(2015);
         });
         });
-
-
       });
     
+      it('Update row in a movie table', () => {
+        
+        cy.task(
+          'queryDb',
+          `UPDATE movies SET genre = "P.B - Series" WHERE title = 'Peaky Blinders';`
+        ).then((result:any) =>{
+          expect(result.changedRows).to.be.equal(1);
+        });
 
+        cy.task(
+          'queryDb',
+          `SELECT genre FROM movies WHERE title="Peaky Blinders"`
+        ).then((result:any)=>{
+          expect(result[0].genre).to.equal("P.B - Series");
+        });
+      });
 });
