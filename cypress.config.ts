@@ -10,6 +10,9 @@ const path = require("path"); //for file path
 //MySQL requirements
 const mysql = require("mysql");
 
+//Faker
+const{faker} = require("@faker-js/faker");
+
 
 export default defineConfig({
   e2e: {
@@ -42,6 +45,20 @@ export default defineConfig({
       },
     });
     //----------------------------
+
+    //Faker task
+    on("task", {
+      freshUser(){
+        let user = {
+          username: faker.name.firstName(),
+          email: faker.internet.email(),
+          password: faker.internet.password(),
+          registeredAt: faker.date.past(),
+          vehicle: faker.vehicle.vehicle()
+        };
+        return user;
+      }
+    })
 
 
     //For the mochaawsome reporter
