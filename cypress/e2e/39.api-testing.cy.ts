@@ -25,7 +25,7 @@ describe('Basic API test example', () => {
         });
     });
 
-    it.only('Update a new resource - PUT METHOD', ()=>{
+    it('Update a new resource - PUT METHOD', ()=>{
 
         cy.request('PUT', 'https://jsonplaceholder.typicode.com/posts/1', {
 
@@ -39,9 +39,26 @@ describe('Basic API test example', () => {
             cy.log('Response: ', response);
             expect(response.status).to.be.equal(200);
         });
-
-
     });
+
+
+    
+    it.only('Delete a resource - DELETE METHOD', ()=>{
+
+        cy.request('DELETE', 'https://jsonplaceholder.typicode.com/posts/1', {
+
+            id: 1,
+            title: "Test - PUT",
+            body: "Test - BODY",
+            userId: 101
+
+        })
+        .then((response)=>{
+            cy.log('Response: ', response);
+            expect(response.status).to.be.equal(200);
+        });
+    });
+
 
 
 
