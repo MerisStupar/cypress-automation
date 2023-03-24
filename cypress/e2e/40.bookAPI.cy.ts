@@ -6,8 +6,14 @@ describe('BookStore API Tests', () => {
     });
 
 
-    it('Get an authorization token from the API account', ()=> {
-        cy.request('POST', `${Cypress.env("demoQA")}/Account/v1/GenerateToken`);
-    });
+    it("Get an authorizaztion token from the API account", function () {
+        cy.request("POST", `${Cypress.env("demoQA")}/Account/v1/GenerateToken`, {
+          userName: "test",
+          password: "Test1234*",
+        }).then((response) => {
+           const token:string = response.body.token;
+           cy.wrap(token).as('token');
+        });
+      });
     
 });
