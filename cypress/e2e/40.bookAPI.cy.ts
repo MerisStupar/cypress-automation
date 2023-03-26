@@ -16,7 +16,7 @@ describe('BookStore API Tests', () => {
       });
     
     
-    it('Get the user information', () => {
+    it('Get the user information', function() {
         const userId: string = this.userId;
         const token: string = this.token;
         const authorization: string = `Bearer ${token}`;
@@ -29,7 +29,23 @@ describe('BookStore API Tests', () => {
             },
         };
        cy.request(options).then((response)=>{
-            cy.log(response);
+        // cy.log(response);
+            cy.log('Status code validation').then(()=>{
+                expect(response.status).to.be.equal(200);
+                expect(response.statusText).to.be.equal('OK');
+            });
+
+            cy.log('Username validation').then(()=>{
+                expect(response.body.username).to.be.equal('test');
+            });
+
+            cy.log('Book validation').then(()=>{
+                expect(response.body.books[0].title).to.be.equal('Git Pocket Guide');
+            });
+
+            cy.log('Schema validation').then(()=>{
+                expect(response.body.username).to.be.a('string');
+            });
        });  
     });
 });
