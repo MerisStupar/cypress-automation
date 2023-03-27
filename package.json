@@ -8,7 +8,8 @@
     "allTest": "cypress run --e2e --browser chrome",
     "runner": "cypress open --e2e --browser chrome --config baseUrl=http://uitestingplayground.com --env demoVar=Hello_From_Package_File",
     "production_Test": "cypress open --e2e --browser chrome --config baseUrl=http://www.google.com --env demoVar=Hello_From_Package_File",
-    "cypress-run": "cypress run --browser firefox --spec cypress/e2e/40.bookAPI.cy.ts --record --key 8fa5e574-d0c0-45b8-b917-b5c7ed24e7f9"
+    "cypress-run": "cypress run --browser firefox --spec cypress/e2e/40.bookAPI.cy.ts --record --key 8fa5e574-d0c0-45b8-b917-b5c7ed24e7f9",
+    "cypress-parallel": "cypress run --record --key 8fa5e574-d0c0-45b8-b917-b5c7ed24e7f9 --parallel --spec cypress/e2e/parallel-test/*.ts --browser chrome"
   },
   "keywords": [
     "cypress",
