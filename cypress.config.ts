@@ -104,7 +104,7 @@ export default defineConfig({
     openMode: 1,
   },
   video: false, */
-  
+  projectId: "7tx8x6",
 });
 
 
