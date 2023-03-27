@@ -1,6 +1,6 @@
 describe('Hello-World', () => {
   it('passes', () => {
-    cy.log('Hello world');
+    cy.log('Hello world - test');
   });
 
   it("Typescript Introduction", ()=>{
