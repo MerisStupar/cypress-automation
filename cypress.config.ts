@@ -79,8 +79,11 @@ export default defineConfig({
         password: "",
         database: "cypress_test"
       },
-      
 
+      //Working wiht sensitive data
+      user: "test",
+      password: ""
+    
     },
 
   },
