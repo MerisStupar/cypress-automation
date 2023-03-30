@@ -64,6 +64,9 @@ export default defineConfig({
     //For the mochaawsome reporter
     require('cypress-mochawesome-reporter/plugin')(on);
     //--------------------------------------------
+
+    //DONENV
+    require('dotenv').config();
     },
     env: {
       demoVar: "Hello from the Cypress.Config.Ts",

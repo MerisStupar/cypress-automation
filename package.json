@@ -25,9 +25,11 @@
     "@testing-library/cypress": "^9.0.0",
     "cy-verify-downloads": "^0.1.13",
     "cypress": "^12.8.1",
+    "cypress-dotenv": "^2.0.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.3.0",
     "cypress-real-events": "^1.7.6",
+    "dotenv": "^16.0.3",
     "node-xlsx": "^0.21.0",
     "typescript": "^4.9.5"
   },
